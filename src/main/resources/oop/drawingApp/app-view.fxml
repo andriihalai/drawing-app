@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.drawingApp.AppController">
+  <children>
+    <MenuBar fx:id="menuBar" VBox.vgrow="ALWAYS">
+      <menus>
+        <Menu mnemonicParsing="false" text="Файл" />
+        <Menu mnemonicParsing="false" text="Довідка" />
+      </menus>
+    </MenuBar>
+    <ToolBar fx:id="toolBar" prefHeight="40.0" prefWidth="200.0">
+      <items>
+        <ToggleButton fx:id="pointTool" mnemonicParsing="false" onAction="#drawPoint">
+          <graphic>
+            <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@Images/photo_2023-10-27_16-41-54.jpg" />
+              </image>
+            </ImageView>
+          </graphic>
+          <toggleGroup>
+            <ToggleGroup fx:id="tools" />
+          </toggleGroup>
+          <cursor>
+            <Cursor fx:constant="HAND" />
+          </cursor>
+          <tooltip>
+            <Tooltip text="Крапка" />
+          </tooltip>
+        </ToggleButton>
+        <ToggleButton fx:id="lineTool" mnemonicParsing="false" onAction="#drawLine" toggleGroup="$tools">
+          <graphic>
+            <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@Images/photo_2023-10-27_16-45-49.jpg" />
+              </image>
+            </ImageView>
+          </graphic>
+          <cursor>
+            <Cursor fx:constant="HAND" />
+          </cursor>
+          <tooltip>
+            <Tooltip text="Лінія" />
+          </tooltip>
+        </ToggleButton>
+        <ToggleButton fx:id="rectTool" mnemonicParsing="false" onAction="#drawRect" toggleGroup="$tools">
+          <graphic>
+            <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@Images/photo_2023-11-01_23-13-30.jpg" />
+              </image>
+            </ImageView>
+          </graphic>
+          <cursor>
+            <Cursor fx:constant="HAND" />
+          </cursor>
+          <tooltip>
+            <Tooltip text="Прямокутник" />
+          </tooltip>
+        </ToggleButton>
+        <ToggleButton fx:id="ellipseTool" mnemonicParsing="false" onAction="#drawEllipse" toggleGroup="$tools">
+          <graphic>
+            <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@Images/photo_2023-10-27_18-22-24.jpg" />
+              </image>
+            </ImageView>
+          </graphic>
+          <cursor>
+            <Cursor fx:constant="HAND" />
+          </cursor>
+          <tooltip>
+            <Tooltip text="Еліпс" />
+          </tooltip>
+        </ToggleButton>
+            <ToggleButton mnemonicParsing="false" onAction="#drawOLineO" prefHeight="38.0" prefWidth="59.0" toggleGroup="$tools">
+               <tooltip>
+                  <Tooltip text="Лінія з кружечками на кінцях" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/photo_2023-11-12_23-01-27.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton mnemonicParsing="false" onAction="#drawCube" prefHeight="37.0" prefWidth="59.0" toggleGroup="$tools">
+               <tooltip>
+                  <Tooltip text="Куб" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/photo_2023-11-14_22-22-58.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+      </items>
+    </ToolBar>
+    <Canvas id="canvas" fx:id="canvas" height="349.0" width="600.0" />
+  </children>
+</VBox>
